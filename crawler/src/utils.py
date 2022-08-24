@@ -4,6 +4,8 @@ from bs4.element import Tag
 from typing import Dict, List, Tuple
 import requests
 
+PTT_PREFIX = "https://www.ptt.cc/"
+
 def create_soup(url: str) -> BeautifulSoup:
     """ Create bs4 obj from url
 
