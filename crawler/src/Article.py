@@ -1,11 +1,4 @@
-from bs4.element import Tag
-import logging
-class Toc():
-    def __init__(self, base_url: str, idx:int) -> None:
-        pass
-        self.articles = []
-    
-class Article():
+class Article:
     def __init__(self, title: str, author: str, url: str, date: str) -> None:
         """_summary_
 
