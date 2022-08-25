@@ -1,7 +1,7 @@
 import logging
 from bs4 import BeautifulSoup
 from bs4.element import Tag
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Optional
 from logging import Logger
 import requests
 
@@ -60,6 +60,7 @@ def get_logger(file_name: str) -> Logger:
 
     Args:
         file_name (str): Current file name
+
     Returns:
         Logger: logging.Logger object
     """
