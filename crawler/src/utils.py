@@ -2,6 +2,7 @@ import logging
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 from typing import Dict, List, Tuple
+from logging import Logger
 import requests
 
 PTT_PREFIX = "https://www.ptt.cc/"
@@ -53,3 +54,22 @@ def extract_article_meta(bs4_tag: Tag) -> Dict:
     except AttributeError as e:
         logging.error(e)
         logging.error(bs4_tag)
+
+def get_logger(file_name: str) -> Logger:
+    """Create logger object
+
+    Args:
+        file_name (str): Current file name
+    Returns:
+        Logger: logging.Logger object
+    """
+    console_handler = logging.StreamHandler()
+    console_format = logging.Formatter(
+        '%(asctime)s - %(module)s - %(levelname)s - %(message)s'
+    )
+
+    console_handler.setFormatter(console_format)
+
+    logger = Logger(file_name)
+    logger.addHandler(console_handler)
+    return logger
